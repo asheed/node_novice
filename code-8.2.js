@@ -9,17 +9,22 @@ var app = express();
 
 // request 이벤트 리스너 설정
 app.use(function (request, response) {
+    // user-agent 속성 추출
+    var agent = request.header('User-Agent');
+
+    console.log(request.headers);
+    console.log(agent);
+
     // 데이터 생성
-    var output = [];
+    /*var output = [];
     for (var i = 0; i < 3; i++) {
         output.push({
             count: i,
             name: 'name-'+i
         })
-    }
-
+    } */
     // 응답
-    response.send(output);
+    response.send(200);
     /*response.writeHead(200, { 'Content-Type': 'text/html' });
     response.end('<h1>Hello express!</h1>');*/
 });
